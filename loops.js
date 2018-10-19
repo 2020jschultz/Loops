@@ -24,7 +24,11 @@ function additionPatternSum(start, diff, limit){
 // While-loop function
 
 function multiplicationPatternSum(start, factor, max){
-while(factor <= max){
+    sum = start;
+    let k=start;
+    while(k <= max){
+    sum = sum + factor*k;
+    k=factor*k;
 
 }
 
