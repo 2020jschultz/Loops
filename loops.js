@@ -1,58 +1,44 @@
-// For-loop functions
-
 function positiveIntSum(limit){
-let sum = 0;
-    for(let i = 1; i < limit; i++){
-        sum = sum + i;
+    let sum = 0;
+    for(let k=1; k<=limit; k++){
+        sum = sum + k;
     }
     return sum;
 }
 
 
-function additionPatternSum(start, diff, limit){
-    let sum = start;
-    for(let i = start; i <= limit; i++){
-        sum = sum + i*diff;
-        return sum;
+function addSum(start, diff, max){
+    //setting up varaibles
+    let sum = 0;
+    let currentNumber = start;
+
+    while(currentNumber <= max){
+        //adding to the sum.
+        sum = sum + currentNumber;
+        //moving to the next number in the list.
+        currentNumber = currentNumber + diff;
     }
-    
+
+    return sum;
 }
 
+function multSum(start, factor, max){
+    //setting up varaibles
+    let sum = 0;
+    let currentNumber = start;
 
+    while(currentNumber <= max){
+        //adding to the sum.
+        sum = sum + currentNumber;
+        //moving to the next number in the list.
+        currentNumber = currentNumber * factor;
+    }
 
-
-// While-loop function
-
-function multiplicationPatternSum(start, factor, max){
-    sum = start;
-    let k=start;
-    while(k <= max){
-    sum = sum + factor*k;
-    k=factor*k;
-
+    return sum;
 }
-
-}
-
-
-
-
-//Later copy paste the checking code below here.
-function check(){
-    let smallLimit = 208;
-    let mediumLimit = 1024;
-    let largeLimit = 600000;//six hundred thousand
-
-    let test1 = 21736 === positiveIntSum(smallLimit);
-    let test2 = 180000300000 === positiveIntSum(mediumLimit);
-    let test3 = 1770 === additionPatternSum(60,3,20);
-    let test4 = 8375 === additionPatternSum(-200, 15, 50);
-    let test5 = 12345678 === multiplicationPatternSum(1,3,largeLimit);
-    let test6 = 12345678 === multiplicationPatternSum(5,2,largeLimit);
-    let test7 = 12345678 === multiplicationPatternSum(2,-7,largeLimit);
-
-    console.log(`The function positiveIntSum works properly: ${test1 && test2}`);
-    console.log(`The function additionPatternSum works properly: ${test3 && test4}`);
-    console.log(`The function positiveIntSum works properly: ${test5 && test6 && test7}`);
-    
-}
+console.log(positiveIntSum(1500));
+console.log(positiveIntSum(2000000));
+console.log(addSum(-80, 60, 2860));
+console.log(addSum(10, 5, 100));
+console.log(multSum(1, 3, 100));
+console.log(multSum(1, -3, 100));
